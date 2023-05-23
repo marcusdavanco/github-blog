@@ -1,5 +1,12 @@
+import logo from "../../assets/logo.svg"
+import { HeaderContainer } from './styles'
+
 export function Header() {
 	return (
-		<h1>Header</h1>
+		<HeaderContainer>
+			<a href="/">
+				<img src={logo} alt="logo" />
+			</a>
+		</HeaderContainer>
 	)
 }
