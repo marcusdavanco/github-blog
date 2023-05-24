@@ -2,6 +2,26 @@ import styled from "styled-components";
 
 export const SearchInputContainer = styled.div`
   display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 3rem;
+
+  header {
+    display: flex;
+    justify-content: space-between;
+
+    p {
+      font-weight: 700;
+      font-size: ${(props) => props.theme["font-size-4"]};
+      color: ${(props) => props.theme["base-subtitle"]};
+    }
+
+    span {
+      font-size: ${(props) => props.theme["font-size-2"]};
+      color: ${(props) => props.theme["base-span"]};
+    }
+  }
+
   input {
     display: flex;
     flex: 1;
@@ -11,7 +31,7 @@ export const SearchInputContainer = styled.div`
     border-radius: 6px;
     color: ${(props) => props.theme["base-text"]};
 
-    &:placeholder {
+    &::placeholder {
       color: ${(props) => props.theme["base-label"]};
     }
   }
