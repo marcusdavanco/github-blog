@@ -1,9 +1,8 @@
 import styled from "styled-components";
 
 export const HomeContainer = styled.main`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 864px;
+  margin: 0 auto 14.625rem;
 `;
 
 export const CardsContainer = styled.section`
