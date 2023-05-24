@@ -8,6 +8,7 @@ export const CardContainer = styled.article`
   background-color: ${(props) => props.theme["base-post"]};
   border: 1px solid ${(props) => props.theme["base-border"]};
   transition: border 0.2s;
+  cursor: pointer;
 
   &:hover {
     border: 1px solid ${(props) => props.theme["base-label"]};
