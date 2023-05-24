@@ -3,7 +3,7 @@ import { LinkButtonContainer } from "./styles";
 
 interface LinkButtonProps {
   text: string;
-  icon: ReactNode;
+  icon?: ReactNode;
   link: string;
 }
 

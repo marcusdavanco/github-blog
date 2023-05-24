@@ -1,6 +1,6 @@
 import { Card } from "../../components/Card";
-import { HeaderCard } from "../../components/HeaderCard";
 import { SearchInput } from "../../components/SearchInput";
+import { HeaderCard } from "./components/HeaderCard";
 import { HomeContainer, CardsContainer } from "./styles";
 
 export function Home() {

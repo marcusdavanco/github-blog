@@ -1,5 +1,4 @@
-import { LinkButton } from "../LinkButton";
-import { HeaderCardContainer } from "./styles";
+import { PostHeaderCardContainer } from "./styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowUpRightFromSquare,
@@ -8,19 +7,16 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useTheme } from "styled-components";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { LinkButton } from "../../../../components/LinkButton";
 
-export function HeaderCard() {
+export function PostHeaderCard() {
   const theme = useTheme();
 
   return (
-    <HeaderCardContainer>
-      <img
-        src="https://www.github.com/marcusdavanco.png"
-        alt="Marcus Davanço"
-      />
+    <PostHeaderCardContainer>
       <div>
         <header>
-          <h2>Marcus Davanço</h2>
+          <LinkButton text="voltar" link="/" />
           <LinkButton
             text="github"
             link="http://www.github.com/marcusdavanco"
@@ -65,6 +61,6 @@ export function HeaderCard() {
           </div>
         </div>
       </div>
-    </HeaderCardContainer>
+    </PostHeaderCardContainer>
   );
 }
