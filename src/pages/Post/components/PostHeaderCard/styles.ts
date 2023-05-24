@@ -15,21 +15,22 @@ export const PostHeaderCardContainer = styled.section`
     border-radius: 8px;
   }
 
+  & > div {
+    width: 100%;
+  }
+
   header {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 0.5rem;
-
-    h2 {
-      font-size: ${(props) => props.theme["font-size-4"]};
-      font-weight: 700;
-      line-height: 2rem;
-      color: ${(props) => props.theme["base-title"]};
-    }
+    margin-bottom: 1.25rem;
   }
 
-  p {
-    margin-bottom: 1.5rem;
+  h2 {
+    font-size: ${(props) => props.theme["font-size-5"]};
+    font-weight: 700;
+    line-height: 130%;
+    color: ${(props) => props.theme["base-title"]};
+    margin-bottom: 0.5rem;
   }
 
   div > div {
@@ -40,6 +41,7 @@ export const PostHeaderCardContainer = styled.section`
       display: flex;
       align-items: center;
       gap: 0.5rem;
+      width: fit-content;
     }
   }
 `;

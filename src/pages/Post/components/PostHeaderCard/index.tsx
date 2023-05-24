@@ -2,8 +2,9 @@ import { PostHeaderCardContainer } from "./styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowUpRightFromSquare,
-  faBuilding,
-  faUserGroup,
+  faCalendar,
+  faChevronLeft,
+  faComment,
 } from "@fortawesome/free-solid-svg-icons";
 import { useTheme } from "styled-components";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
@@ -16,7 +17,14 @@ export function PostHeaderCard() {
     <PostHeaderCardContainer>
       <div>
         <header>
-          <LinkButton text="voltar" link="/" />
+          <LinkButton
+            text="voltar"
+            link="/"
+            icon={
+              <FontAwesomeIcon icon={faChevronLeft} color={theme?.["blue"]} />
+            }
+            iconPosition="left"
+          />
           <LinkButton
             text="github"
             link="http://www.github.com/marcusdavanco"
@@ -29,11 +37,7 @@ export function PostHeaderCard() {
             }
           />
         </header>
-        <p>
-          Tristique volutpat pulvinar vel massa, pellentesque egestas. Eu
-          viverra massa quam dignissim aenean malesuada suscipit. Nunc, volutpat
-          pulvinar vel mass.
-        </p>
+        <h2>JavaScript data types and data structures</h2>
         <div>
           <div>
             <FontAwesomeIcon
@@ -45,19 +49,19 @@ export function PostHeaderCard() {
           </div>
           <div>
             <FontAwesomeIcon
-              icon={faBuilding}
+              icon={faCalendar}
               color={theme?.["base-label"]}
               size="1x"
             />
-            <a>Serendip Software</a>
+            <a>Há 1 dia</a>
           </div>
           <div>
             <FontAwesomeIcon
-              icon={faUserGroup}
+              icon={faComment}
               color={theme?.["base-label"]}
               size="1x"
             />
-            <a>32 seguidores</a>
+            <a>5 comentários</a>
           </div>
         </div>
       </div>
