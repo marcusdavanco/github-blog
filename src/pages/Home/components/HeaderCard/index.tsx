@@ -61,7 +61,7 @@ export function HeaderCard() {
               color={theme?.["base-label"]}
               size="1x"
             />
-            <a>{user.name}</a>
+            <a>{user.login}</a>
           </div>
           <div>
             <FontAwesomeIcon
