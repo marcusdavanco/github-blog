@@ -8,22 +8,38 @@ import {
 import { useTheme } from "styled-components";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { LinkButton } from "../../../../components/LinkButton";
+import { useEffect, useState } from "react";
+import { api } from "../../../../lib/axios";
+
+interface User {
+  name: string;
+  login: string;
+  copany: string | null;
+  followers: number;
+}
 
 export function HeaderCard() {
+  const [user, setUser] = useState<User>({} as User);
   const theme = useTheme();
+
+  const fetchUser = async () => {
+    const response = await api.get("/users/marcusdavanco");
+    setUser(response.data);
+  };
+
+  useEffect(() => {
+    fetchUser();
+  }, []);
 
   return (
     <HeaderCardContainer>
-      <img
-        src="https://www.github.com/marcusdavanco.png"
-        alt="Marcus Davanço"
-      />
+      <img src={`https://www.github.com/${user.login}.png`} alt={user.name} />
       <div>
         <header>
-          <h2>Marcus Davanço</h2>
+          <h2>{user.name}</h2>
           <LinkButton
             text="github"
-            link="http://www.github.com/marcusdavanco"
+            link={`http://www.github.com/${user.login}`}
             icon={
               <FontAwesomeIcon
                 icon={faArrowUpRightFromSquare}
@@ -45,7 +61,7 @@ export function HeaderCard() {
               color={theme?.["base-label"]}
               size="1x"
             />
-            <a>marcusdavanco</a>
+            <a>{user.name}</a>
           </div>
           <div>
             <FontAwesomeIcon
@@ -53,7 +69,7 @@ export function HeaderCard() {
               color={theme?.["base-label"]}
               size="1x"
             />
-            <a>Serendip Software</a>
+            <a>{user.copany || "-"}</a>
           </div>
           <div>
             <FontAwesomeIcon
@@ -61,7 +77,7 @@ export function HeaderCard() {
               color={theme?.["base-label"]}
               size="1x"
             />
-            <a>32 seguidores</a>
+            <a>{user.followers} seguidores</a>
           </div>
         </div>
       </div>
