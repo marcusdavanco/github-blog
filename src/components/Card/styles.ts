@@ -16,6 +16,7 @@ export const CardContainer = styled.article`
 
   header {
     display: flex;
+    justify-content: space-between;
 
     h2 {
       font-weight: 700;
