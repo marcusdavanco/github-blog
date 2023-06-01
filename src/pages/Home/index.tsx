@@ -24,10 +24,6 @@ export function Home() {
     fetchIssues();
   }, []);
 
-  useEffect(() => {
-    console.log(issues);
-  }, [issues]);
-
   return (
     <HomeContainer>
       <main>
