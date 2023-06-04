@@ -16,10 +16,11 @@ export function Home() {
         <CardsContainer>
           {issues?.map((issue) => (
             <Card
-              key={issue.id}
+              key={issue.number}
               body={issue.body}
               title={issue.title}
               created_at={issue.created_at}
+              number={issue.number}
             />
           ))}
         </CardsContainer>

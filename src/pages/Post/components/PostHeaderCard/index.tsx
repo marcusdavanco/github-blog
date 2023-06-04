@@ -9,8 +9,14 @@ import {
 import { useTheme } from "styled-components";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { LinkButton } from "../../../../components/LinkButton";
+import { Issue } from "../../../../context/issuesContext";
+import { formatDistanceToNow } from "date-fns";
+import { ptBR } from "date-fns/locale";
+interface PostHeaderCardProps {
+  currentIssue: Issue;
+}
 
-export function PostHeaderCard() {
+export function PostHeaderCard({ currentIssue }: PostHeaderCardProps) {
   const theme = useTheme();
 
   return (
@@ -27,7 +33,7 @@ export function PostHeaderCard() {
           />
           <LinkButton
             text="github"
-            link="http://www.github.com/marcusdavanco"
+            link={`http://www.github.com/marcusdavanco/blog/issues/${currentIssue.number}`}
             icon={
               <FontAwesomeIcon
                 icon={faArrowUpRightFromSquare}
@@ -37,7 +43,7 @@ export function PostHeaderCard() {
             }
           />
         </header>
-        <h2>JavaScript data types and data structures</h2>
+        <h2>{currentIssue.title}</h2>
         <div>
           <div>
             <FontAwesomeIcon
@@ -45,7 +51,7 @@ export function PostHeaderCard() {
               color={theme?.["base-label"]}
               size="1x"
             />
-            <a>marcusdavanco</a>
+            <a>{currentIssue.user?.login}</a>
           </div>
           <div>
             <FontAwesomeIcon
@@ -53,7 +59,13 @@ export function PostHeaderCard() {
               color={theme?.["base-label"]}
               size="1x"
             />
-            <a>Há 1 dia</a>
+            <a>
+              {currentIssue.created_at &&
+                formatDistanceToNow(new Date(currentIssue.created_at), {
+                  locale: ptBR,
+                  addSuffix: true,
+                })}
+            </a>
           </div>
           <div>
             <FontAwesomeIcon
@@ -61,7 +73,11 @@ export function PostHeaderCard() {
               color={theme?.["base-label"]}
               size="1x"
             />
-            <a>5 comentários</a>
+            <a>
+              {`${currentIssue.comments || 0} comentário${
+                currentIssue.comments === 1 ? "" : "s"
+              }`}
+            </a>
           </div>
         </div>
       </div>
