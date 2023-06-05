@@ -2,6 +2,7 @@ import { CardContainer } from "./styles";
 import { formatDistanceToNow } from "date-fns";
 import ptBR from "date-fns/locale/pt-BR";
 import { Link } from "react-router-dom";
+import removeMarkdown from "remove-markdown";
 
 interface CardProps {
   title: string;
@@ -23,7 +24,7 @@ export function Card({ title, body, created_at, number }: CardProps) {
           <h2>{title}</h2>
           <span>{publishedDateRelativeFromNow}</span>
         </header>
-        <p>{body}</p>
+        <p>{removeMarkdown(body).replace(/\s/g, " ").replace(/\s$/, "")}</p>
       </CardContainer>
     </Link>
   );

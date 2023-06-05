@@ -1,28 +1,15 @@
 import styled from "styled-components";
 
-export const PostContainer = styled.main`
-  width: 864px;
-  margin: 0 auto 14.625rem;
-`;
-
-export const Content = styled.section`
+export const PostContentContainer = styled.div`
   overflow: hidden;
   padding: 2.5rem 2rem;
 
-  p {
-    font-size: 16;
-  }
-
   strong {
-    font-size: 16;
-
     font-weight: 700;
   }
 
   a {
-    font-size: 16;
-
-    color: ${({ theme }) => theme.colors.blue};
+    color: ${({ theme }) => theme?.blue};
 
     &:hover {
       text-decoration: underline;
