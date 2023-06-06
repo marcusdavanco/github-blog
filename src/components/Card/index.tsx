@@ -18,7 +18,7 @@ export function Card({ title, body, created_at, number }: CardProps) {
   );
 
   return (
-    <Link to={`/post/${number}`}>
+    <Link to={`/post/${number}`} style={{ textDecoration: "none" }}>
       <CardContainer>
         <header>
           <h2>{title}</h2>

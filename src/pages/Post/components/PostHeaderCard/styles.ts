@@ -10,6 +10,10 @@ export const PostHeaderCardContainer = styled.section`
   margin-top: -5.625rem;
   margin-bottom: 4.5rem;
 
+  div > div > a {
+    color: ${(props) => props.theme["base-label"]};
+  }
+
   img {
     width: 9.25rem;
     border-radius: 8px;

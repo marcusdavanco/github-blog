@@ -16,6 +16,7 @@ interface User {
   login: string;
   copany: string | null;
   followers: number;
+  bio: string;
 }
 
 export function HeaderCard() {
@@ -49,11 +50,7 @@ export function HeaderCard() {
             }
           />
         </header>
-        <p>
-          Tristique volutpat pulvinar vel massa, pellentesque egestas. Eu
-          viverra massa quam dignissim aenean malesuada suscipit. Nunc, volutpat
-          pulvinar vel mass.
-        </p>
+        <p>{user.bio}</p>
         <div>
           <div>
             <FontAwesomeIcon
@@ -69,7 +66,7 @@ export function HeaderCard() {
               color={theme?.["base-label"]}
               size="1x"
             />
-            <a>{user.copany || "-"}</a>
+            <a>{user.copany || "Sem empresa"}</a>
           </div>
           <div>
             <FontAwesomeIcon

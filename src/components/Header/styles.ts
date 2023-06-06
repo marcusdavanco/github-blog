@@ -9,6 +9,7 @@ export const HeaderContainer = styled.header`
   background-repeat: no-repeat;
   height: 296px;
   background-position: center;
+  background-size: cover;
 
   a {
     margin-top: 64px;
